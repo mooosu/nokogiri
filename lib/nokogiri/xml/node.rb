@@ -720,6 +720,7 @@ module Nokogiri
         }
 
         encoding = options[:encoding] || document.encoding
+        encoding = "UTF-8" if encoding =~/utf8/i
 
         outstring = ""
         if encoding && outstring.respond_to?(:force_encoding)
